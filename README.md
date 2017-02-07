@@ -164,7 +164,22 @@ module.exports = {
             filter: path.join(__dirname, './src/filters'),
             components: path.join(__dirname, './src/components')
         }
+    },
+    babel: {
+       presets: ['es2015','stage-0'],
+       plugins: ['transform-runtime']
     }    
+}
+```
+特别说明
+如果要在.babelrc下配置babel，则需要在根目录下新建该文件，windows环境下，不能新建该txt文件然后改后缀，需要通过dos命令建立：
+
+echo>.babelrc
+通过该命令就可以建立babelde配置文件，用编辑器打开，修改里面的内容为：
+```
+{
+  "presets": ["es2015", "stage-0"],
+  "plugins": ["transform-runtime"]
 }
 ```
 package.json文件：
